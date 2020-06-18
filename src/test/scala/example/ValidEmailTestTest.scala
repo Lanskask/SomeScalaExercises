@@ -3,8 +3,6 @@ package example
 import org.scalatest.funsuite.AnyFunSuite
 
 class ValidEmailTest extends AnyFunSuite {
-  val valEmail = ValidEmail();
-
   val testData = Seq(
     ("test@gmail.com", true),
     ("", false),
@@ -21,7 +19,7 @@ class ValidEmailTest extends AnyFunSuite {
     for {
       (k, v) <- testData
     } {
-      assert(valEmail.validEmail(k) == v)
+      assert(ValidEmail.validEmail(k) == v)
     }
   }
 }

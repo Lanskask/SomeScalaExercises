@@ -52,13 +52,13 @@ object CheckTree {
     case Some(leftNodeIn) =>
       rightNode match {
         case Some(rightNodeIn) =>
-          //          leftNodeIn.value == rightNodeIn.value &&
           tailcall {
             for {
               leftEqual <- isSameTreeTailRec(leftNodeIn.left, rightNodeIn.left)
               rightEqual <- isSameTreeTailRec(leftNodeIn.right, rightNodeIn.right)
             } yield leftEqual && rightEqual
           }
+        case None => done(false)
       }
   }
 }

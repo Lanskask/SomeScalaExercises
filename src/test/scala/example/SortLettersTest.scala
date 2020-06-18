@@ -18,7 +18,7 @@ class SortLettersTest extends AnyFunSuite {
     } yield {
       answer match {
         case answer: String => assert(SortLetters.sortLetters(input) == answer)
-        case seq: Seq[String] => assert(seq.contains(SortLetters.sortLetters(input)))
+        case seq: Seq[_] => assert(seq.contains(SortLetters.sortLetters(input)))
       }
 
     }
